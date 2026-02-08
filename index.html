@@ -1,0 +1,856 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио финансового директора - Ирина Оленева</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #1b4332;
+            --medium-green: #2d6a4f;
+            --light-green: #40916c;
+            --accent-gold: #d4af37;
+            --accent-teal: #2d9cdb;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a5568;
+            --border-color: #e2e8f0;
+            --success-color: #38b2ac;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+            --gradient-start: #1b4332;
+            --gradient-end: #2d6a4f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Единый стиль заголовков */
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.7));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-gold);
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+        
+        .name {
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            padding: 8px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            width: fit-content;
+            line-height: 1.3;
+        }
+        
+        /* Градиентный заголовок с эффектом прозрачности */
+        .header {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            padding: 80px 0 60px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(45, 156, 219, 0.05) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Карточки навыков */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: var(--light-green);
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-gold), var(--light-green));
+        }
+        
+        .skill-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--dark-green), var(--medium-green));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+        
+        .skill-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-green);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .skill-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+        
+        /* Сетка инструментов в виде тегов */
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+        
+        .tool-tag {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--dark-green);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            font-size: 1rem;
+            line-height: 1;
+        }
+        
+        .tool-tag:hover {
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+            transform: translateY(-3px);
+            border-color: var(--light-green);
+            box-shadow: 0 5px 15px rgba(45, 106, 79, 0.1);
+        }
+        
+        .tool-tag i {
+            color: var(--light-green);
+        }
+        
+        /* Кейсы */
+        .cases-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .case-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 35px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-gold), var(--light-green));
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        
+        .case-title {
+            font-size: 1.5rem;
+            color: var(--dark-green);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .case-title i {
+            color: var(--accent-gold);
+        }
+        
+        .case-subtitle {
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+        
+        .case-list {
+            list-style-type: none;
+        }
+        
+        .case-item {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.5;
+            font-size: 1.05rem;
+        }
+        
+        .case-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--light-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .case-item strong {
+            color: var(--dark-green);
+            background: linear-gradient(120deg, rgba(64, 145, 108, 0.1) 0%, rgba(64, 145, 108, 0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        
+        /* Акцентные элементы */
+        .accent-box {
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.03), rgba(45, 106, 79, 0.03));
+            border-left: 4px solid var(--accent-gold);
+            padding: 30px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 40px 0;
+            color: var(--text-secondary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .accent-box::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 5rem;
+            color: rgba(212, 175, 55, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .accent-box strong {
+            color: var(--dark-green);
+            font-style: normal;
+            font-weight: 700;
+        }
+        
+        /* Контакты */
+        .contacts-section {
+            background: linear-gradient(135deg, var(--dark-green), var(--medium-green));
+            border-radius: var(--radius);
+            padding: 50px 40px;
+            margin: 60px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contacts-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(45, 156, 219, 0.05) 0%, transparent 40%);
+        }
+        
+        .contacts-title-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contacts-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(212, 175, 55, 0.8));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .contacts-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+        }
+        
+        .contact-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .contact-info p, .contact-info a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            line-height: 1.5;
+            font-size: 1.05rem;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+        
+        /* Футер */
+        .footer {
+            background: var(--dark-green);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0;
+            margin-top: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(45, 156, 219, 0.03) 0%, transparent 50%);
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+        
+        .footer-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(212, 175, 55, 0.8));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .main-title {
+                font-size: 2.8rem;
+            }
+            
+            .cases-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.4rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contacts-title, .footer-title {
+                font-size: 2rem;
+            }
+            
+            .name {
+                font-size: 1.7rem;
+                padding: 6px 20px;
+            }
+            
+            .contacts-section {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .contacts-title, .footer-title {
+                font-size: 1.8rem;
+            }
+            
+            .name {
+                font-size: 1.5rem;
+            }
+            
+            .skill-card, .case-card {
+                padding: 25px;
+            }
+            
+            .tool-tag {
+                padding: 10px 18px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .skill-card, .case-card, .accent-box, .contact-item {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        /* Декоративные элементы */
+        .decorative-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
+            margin: 40px 0;
+        }
+        
+        /* Улучшенная читаемость */
+        p, li, .skill-description, .contact-info p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        /* Единые отступы */
+        .section {
+            margin-bottom: 70px;
+        }
+        
+        .tools-section {
+            margin-bottom: 70px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка с градиентным заголовком -->
+    <header class="header">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="main-title">Портфолио финансового директора</h1>
+                <p class="subtitle">Профессиональный опыт и достижения</p>
+                <div class="name">Ирина Оленева</div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Акцентный блок с цитатой -->
+        <div class="accent-box">
+            <strong>Настраиваю систему, чтобы вы всегда знали, сколько у вас денег и куда они уходят</strong>
+        </div>
+        
+        <!-- Карточки навыков -->
+        <section class="section">
+            <h2 class="section-title">Ключевые навыки</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-number">1</div>
+                    <h3 class="skill-title">Внедрение систем управленческого учета</h3>
+                    <p class="skill-description">Разработка и внедрение эффективных систем управленческого учета и финансового планирования, обеспечивающих полную прозрачность финансовых потоков и оперативное принятие решений.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-number">2</div>
+                    <h3 class="skill-title">Оптимизация финансовых показателей</h3>
+                    <p class="skill-description">Снижение затрат и повышение рентабельности бизнеса через анализ финансовых процессов, выявление резервов и внедрение корректирующих мероприятий.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-number">3</div>
+                    <h3 class="skill-title">Финансовая прозрачность и контроль</h3>
+                    <p class="skill-description">Создание систем, позволяющих руководителям всегда иметь актуальную информацию о финансовом состоянии компании, движении денежных средств и эффективности подразделений.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Сетка инструментов -->
+        <section class="section tools-section">
+            <h2 class="section-title">Инструменты и технологии</h2>
+            <div class="tools-grid">
+                <div class="tool-tag">
+                    <i class="fas fa-chart-line"></i> Управленческий учет
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-calculator"></i> БДДС / БДР
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-balance-scale"></i> Финансовое планирование
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-chart-pie"></i> KPI системы
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-tachometer-alt"></i> Анализ рентабельности
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-file-invoice-dollar"></i> Бюджетирование
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-project-diagram"></i> Регламентация процессов
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-database"></i> 1С Управление торговлей
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-hand-holding-usd"></i> Управление ликвидностью
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-users-cog"></i> Построение финансовых отделов
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-robot"></i> Автоматизация процессов
+                </div>
+                <div class="tool-tag">
+                    <i class="fas fa-university"></i> Банковское финансирование
+                </div>
+            </div>
+        </section>
+        
+        <div class="decorative-line"></div>
+        
+        <!-- Кейсы -->
+        <section class="section">
+            <h2 class="section-title">Профессиональные кейсы</h2>
+            <div class="cases-container">
+                <div class="case-card">
+                    <h3 class="case-title"><i class="fas fa-store"></i> Торговая компания: поставка продуктов питания</h3>
+                    <p class="case-subtitle">В должности руководителя финансового отдела</p>
+                    <ul class="case-list">
+                        <li class="case-item"><strong>Увеличила маржинальный доход компании на 35%</strong> за счет внедрения управленческой отчетности, которая выявила эффективность по подразделениям и инициировала корректирующие мероприятия.</li>
+                        <li class="case-item"><strong>С нуля построила и возглавила финансовый отдел (11 человек)</strong>, внедрила полный цикл управленческого учета и планирования (БДДС, БДР).</li>
+                        <li class="case-item"><strong>Внедрила систему KPI для производственных и коммерческих подразделений</strong>, что увязало мотивацию сотрудников с финансовыми результатами компании.</li>
+                        <li class="case-item"><strong>Обеспечила ликвидность и оптимизировала денежные потоки</strong>, выстроив работу с банками и добившись выгодных условий кредитования.</li>
+                        <li class="case-item"><strong>Участвовала в ключевом IT-проекте по миграции с 1С УТ 10.3 на УТ 11</strong>, обеспечив непрерывность учета.</li>
+                    </ul>
+                </div>
+                
+                <div class="case-card">
+                    <h3 class="case-title"><i class="fas fa-tools"></i> Торговая компания: продажа инженерного оборудования</h3>
+                    <p class="case-subtitle">В должности руководителя финансового отдела</p>
+                    <ul class="case-list">
+                        <li class="case-item"><strong>Автоматизировала процессы отчетности и бюджетирования</strong>, что сократило время на обработку данных на 40% и исключило человеческие ошибки.</li>
+                        <li class="case-item"><strong>Разработала и внедрила регламенты финансово-хозяйственной деятельности</strong>, повысив дисциплину и прозрачность процессов.</li>
+                        <li class="case-item"><strong>Наладила оперативный контроль дебиторской задолженности</strong>, сократив ее объем и сроки погашения.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Контакты -->
+        <section class="contacts-section">
+            <div class="container">
+                <div class="contacts-title-wrapper">
+                    <h2 class="contacts-title">Контакты</h2>
+                    <p class="contacts-subtitle">Свяжитесь со мной для обсуждения сотрудничества или консультации</p>
+                </div>
+                <div class="contacts-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <a href="mailto:ibolbuch@mail.ru">ibolbuch@mail.ru</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Телефон</h4>
+                            <a href="tel:89643559240">8-964-355-92-40</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Телеграмм</h4>
+                            <p>@Ioleneva</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Телеграмм канал</h4>
+                            <a href="https://t.me/finance_Ioleneva" target="_blank">t.me/finance_Ioleneva</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-title">Готова к новым вызовам</h2>
+                <p class="footer-text">Имею опыт трансформации финансовых функций в компаниях различных отраслей. Всегда нацелена на результат и повышение эффективности бизнеса через внедрение современных финансовых инструментов.</p>
+                
+                <div class="footer-divider"></div>
+                <p class="copyright">© 2023 Ирина Оленева. Портфолио финансового директора</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Анимация при прокрутке
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация появления элементов при скролле
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Наблюдаем за всеми карточками
+            document.querySelectorAll('.skill-card, .case-card, .accent-box, .contact-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(15px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+            
+            // Интерактивность для тегов инструментов
+            document.querySelectorAll('.tool-tag').forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Плавный скролл для якорей
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
